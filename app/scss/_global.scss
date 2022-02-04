@@ -1,0 +1,11 @@
+body{
+  font-size: 16px;
+  color: $default;
+  line-height: 26px;
+  @extend %quicksand-500;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 15px;
+}
