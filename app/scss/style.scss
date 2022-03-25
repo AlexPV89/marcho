@@ -191,6 +191,9 @@
         @extend %roboto-700;
         margin-bottom: 35px;
     }
+    &__img{
+        max-height: 606px;
+    }
     &__item{
        
         display: flex !important;
