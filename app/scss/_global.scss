@@ -88,3 +88,40 @@ a{
 .header--404-page{
   background-color: $bg;
 }
+.pagination{
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  .pagination__list{
+    display: flex;
+    padding: 0 35px;
+  }
+  &__item{
+    padding: 0 15px;
+  }
+  &__link--active{
+    color: $accent;
+  }
+  &__arrows{
+    text-transform: uppercase;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+    
+      width: 5px;
+      height: 10px;
+
+    }
+  }
+  &__prev::before{
+    background-image: url('../images/icons/angle_left.svg');
+    top: 8px;
+    left: -10px;
+  }
+  &__next::before{
+    background-image: url('../images/icons/angle_right.svg');
+    top: 8px;
+    right: -10px;
+  }
+}
