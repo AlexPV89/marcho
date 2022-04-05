@@ -1,7 +1,39 @@
 
+let arr = [1,3,4,5,6,7,8,9,22,33,44,55,66]
+
+function binarySearch (arr, el) {
+  let low = 0;
+  let hight = arr.length -1;
+
+  while(low <= hight){
+    let mid = Math.floor((low + hight) / 2);
+    if(arr[mid] === el) return mid;
+
+    if(arr[mid] < el) low = mid + 1;
+    if(arr[mid] > el) hight = mid -1;
+  }
+  return -1;
+}
+console.log(binarySearch(arr, 66))
+ 
 
 $(function(){
+  
 
+  $('.product-slide__thumb').slick({
+    asNavFor: '.product-slide__big',
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll:1,
+    draggable: false,
+    vertical: true
+  })
+  $('.product-slide__big').slick({
+    asNavFor:'.product-slide__thumb',
+    draggable: false,
+    arrows: false,
+    fade: true,
+  })
   const btn = document.querySelectorAll('.shop-content__filter-btn');
   let product = document.querySelectorAll('.product-item')
 
@@ -35,7 +67,7 @@ $(function(){
   })
   })
 
-  $('.select-style').styler()
+  $('.select-stylep, .product-one__item-num').styler()
   let from = document.querySelector('.filter-price__from'),
             to = document.querySelector('.filter-price__to')
 
@@ -117,7 +149,29 @@ function setClock (selector, endTime) {
 }
 setClock('.promo__clock', deadLine)
 })
+let productTabs1 = document.querySelector('.product-tabs__top');
+let tabsItems1 = document.querySelectorAll('.product-tabs__top-item');
+let tabsContent = document.querySelectorAll('.product-tabs__content-item');
 
+function showActiveTab (e) {
+    e.preventDefault();
+        if(e.target.classList.contains('product-tabs__top-item')) {
+          tabsItems1.forEach((el, i) =>{
+            el.classList.remove('product-tabs__top-item--active')
+            if(el === e.target)
+            showTabCantent(i)
+          })
+          e.target.classList.add('product-tabs__top-item--active')
+         
+        }   
+}
+function showTabCantent (i) {
+  tabsContent.forEach(el => {
+    el.classList.remove('product-tabs__content-item--active')
+  })
+  tabsContent[i].classList.add('product-tabs__content-item--active')
+}
+productTabs1.addEventListener('click',showActiveTab)
    
    
    
