@@ -123,6 +123,7 @@ function getTime (endTime) {
        hours = Math.floor((timer / (1000 * 60 * 60)) % 24),
        minutes = Math.floor((timer / (1000 * 60) ) % 60),
        seconds = Math.floor((timer / (1000) ) % 60)
+      
   return {
     t: timer,
     days : getZero(days),
@@ -140,13 +141,14 @@ function setClock (selector, endTime) {
           seconds = timer.querySelector('.promo__seconds'),
           timeInterval = setInterval(updateClock, 1000);
           updateClock()
+
     function updateClock () {
       let t = getTime(deadLine);
       days.innerHTML = t.days;
       hours.innerHTML = t.hours;
       minutes.innerHTML = t.minutes;
       seconds.innerHTML = t.seconds;
-      if(t.timer <= 0){
+      if(t.t <=0){
         clearInterval(timeInterval)
       }
     }
