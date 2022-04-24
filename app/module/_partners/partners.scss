@@ -7,3 +7,37 @@
         align-items: center;
     }
 }
+
+@media(max-width: 620px){
+    .partners{
+        padding-top: 60px;
+        .partners__list{
+            flex-wrap: wrap;
+            justify-content: center;
+            height: auto;
+            padding-bottom: 60px; 
+        }
+        .partners__item{
+             margin: 10px 35px;
+        }
+        
+    }
+}
+
+@media(max-width: 500px){
+    .partners{
+        .partners__item{
+             margin: 10px 20px;
+        }
+        
+    }
+}
+
+@media(max-width: 400px){
+    .partners{
+        .partners__item{
+             margin: 10px 5px;
+        }
+        
+    }
+}

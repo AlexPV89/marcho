@@ -118,3 +118,95 @@
     background-image: url('../images/icons/timr.svg');
   }
 }
+
+
+@media(max-width: 1230px){
+    .blog{
+        &__items{
+            &::after{
+                right: 0px;
+            }
+        }
+    }
+}
+@media(max-width: 1200px){
+    .blog{
+        &__items{
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           grid-column-gap: 20px;
+        }
+        &__item-box{
+            padding: 20px 15px;
+        }
+    }
+}
+@media(max-width: 980px){
+    .blog{
+        &__items{
+           
+           grid-template-columns: repeat(2, 1fr);
+           grid-gap: 20px;
+        }
+         &__item{
+             max-width: 100%;
+              img{
+                 width: 100%;
+             }
+         }
+         &__item-box{
+             padding: 20px 10px;
+         }
+         &__item:nth-child(3){
+             grid-column: span 2;
+             margin: 0 auto;
+             
+             .blog-box{
+                 justify-content: space-around;
+             }
+             
+         }
+    }
+}
+
+
+@media(max-width: 650px){
+    .blog{
+        &__items{
+           &::after{
+               content: none;
+           }
+           grid-template-columns: repeat(1, 1fr);
+           grid-gap: 20px;
+        }
+        .blog__item:nth-child(3) {
+            grid-column: span 1;
+            margin: 0 auto;
+        }
+        &__item{
+            margin: 0 auto;
+           
+            .blog-box{
+                justify-content: space-around;
+            }
+            
+        }
+    }
+}
+
+@media(max-width: 370px){
+    .blog-box{
+      display: block; 
+      &__date{
+          margin-top: 10px;
+      }
+    }
+    .blog{
+        &__item-imglink {
+            img{
+                height: 220px;
+            } 
+        }
+    }
+    
+}

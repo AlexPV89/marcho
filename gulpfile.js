@@ -17,7 +17,7 @@ const scss = require('gulp-sass'),
                  server: {
                      baseDir: 'app/'
                  },
-                 notofy: false
+                 notify: false
              }
          )
      }
@@ -87,7 +87,7 @@ const scss = require('gulp-sass'),
      }
     
     function watching ()  {
-       watch(['app/**/*.scss'],nunjucks)
+       watch(['app/**/*.scss'],styles)
        watch(['app/*.njk'],styles)
        watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts)
        watch(['app/**/*.html']).on('change', browserSync.reload)
@@ -102,4 +102,4 @@ const scss = require('gulp-sass'),
     exports.nunjucks = nunjucks
     exports.build = series(cleanDist, images, build)
 
-    exports.default = parallel(nunjucks,styles, scripts, browsersync, watching)
+    exports.default = parallel(nunjucks, styles, scripts, browsersync, watching)

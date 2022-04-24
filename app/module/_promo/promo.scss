@@ -50,3 +50,36 @@
       margin-top: 55px;
     }
 }
+
+@media(max-width: 620px){
+  .promo{
+    padding: 50px 0;
+    &__clock{
+      justify-content: center;
+      flex-wrap:wrap;
+    }
+    &__clock-item{
+      margin: 20px 33px;
+    }
+    }
+  }
+  
+  @media(max-width: 450px){
+    .promo{
+      padding: 50px 0;
+      &__clock{
+       margin-top: 20px;
+
+      }
+      &__clock-item{
+        width: 100px;
+        height: 100px;
+      }
+      &__clock-item{
+        margin: 8px;
+      }
+      &__link{
+      margin-top: 20px;
+      }
+    }
+  }

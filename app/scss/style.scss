@@ -39,6 +39,7 @@
     @extend %roboto-700;
     margin-bottom: 40px;
     font-size: 48px;
+    line-height: 52px;
    }
    &__text{
     margin-bottom: 55px;
@@ -279,6 +280,12 @@
     &__checkbox{
         border: 1px solid $default;
         padding: 10px 20px;
+    }
+}
+.shop{
+    padding: 120px 0;
+    &__filter-btn{
+        display: none;
     }
 }
 .shop-content{
@@ -1115,10 +1122,12 @@
 }
 .map__card{
     margin-top: 120px;
-    width: 1270px;
+    max-width: 1270px;
     height: 450px;
     background-image: url('../images/contact/card.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .contact{
